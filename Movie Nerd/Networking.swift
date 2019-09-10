@@ -8,31 +8,29 @@
 
 import Foundation
 
-struct feed:Codable {
-    var title:String
-    var releaseDate:String
+//struct Welcome: Codable {
+//    let content : content
+//}
+
+struct Result:Codable {
+    var artistName:String
+    var name:String
     var artworkUrl100:String
-}
-struct Movies:Codable {
-    var results:[feed]
-}
-
-class requests {
-    var movies = [feed]()
-    func getCommingSoon() -> Void {
-        let JSONURL = "https://rss.itunes.apple.com/api/v1/us/apple-music/coming-soon/all/10/non-explicit.json"
-        if let url = URL(string: JSONURL) {
-            if let data = try? Data(contentsOf: url) {
-                parse(json: data)
-            }
-        }
-
+    enum codingKeys:String, CodingKey {
+        case artistName = "artistName"
+        case name = "name"
+        case artworkUrl100 = "artworkUrl100"
     }
-    private func parse(json: Data) {
-        let decoder = JSONDecoder()
-        
-        if let JSONalbums = try? decoder.decode(Movies.self, from: json) {
-            movies = JSONalbums.results
-        }
+}
+struct feed:Codable {
+    var results:[Result]
+    enum codingKeys:String, CodingKey {
+        case results = "results"
+    }
+}
+struct Empty:Codable {
+    var feed:feed
+    enum codingKeys:String, CodingKey {
+        case feed = "feed"
     }
 }
