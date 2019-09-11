@@ -55,3 +55,24 @@ extension ViewController {
             }.resume()
     }
 }
+extension TopAlbumsViewController {
+    //Requests JSON data from the network
+    func parse() -> Void {
+        guard let gitUrl = URL(string: JSONURL) else { return }
+        URLSession.shared.dataTask(with: gitUrl) { (data, response
+            , error) in
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let content = try decoder.decode(Empty.self, from: data)
+                self.music = content.feed.results
+                DispatchQueue.main.async {
+                    self.albumList.reloadData()
+                    
+                }
+            } catch let err {
+                print("Err", err)
+            }
+            }.resume()
+    }
+}
