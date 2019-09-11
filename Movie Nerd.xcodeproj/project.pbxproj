@@ -10,6 +10,7 @@
 		A9388FD52328410D003EF6F9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388FD42328410D003EF6F9 /* Extensions.swift */; };
 		A9388FD72328F469003EF6F9 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388FD62328F469003EF6F9 /* detailViewController.swift */; };
 		A9388FD9232907F2003EF6F9 /* TopAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388FD8232907F2003EF6F9 /* TopAlbumsViewController.swift */; };
+		A9388FDB2329109A003EF6F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9388FDA2329109A003EF6F9 /* SettingsViewController.swift */; };
 		A9CE38C3232829D30050F061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CE38C2232829D30050F061 /* AppDelegate.swift */; };
 		A9CE38C5232829D30050F061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CE38C4232829D30050F061 /* ViewController.swift */; };
 		A9CE38C8232829D30050F061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CE38C6232829D30050F061 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		A9388FD42328410D003EF6F9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A9388FD62328F469003EF6F9 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		A9388FD8232907F2003EF6F9 /* TopAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsViewController.swift; sourceTree = "<group>"; };
+		A9388FDA2329109A003EF6F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A9CE38BF232829D30050F061 /* Movie Nerd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Nerd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CE38C2232829D30050F061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9CE38C4232829D30050F061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				A9CE38C4232829D30050F061 /* ViewController.swift */,
 				A9388FD62328F469003EF6F9 /* detailViewController.swift */,
 				A9388FD8232907F2003EF6F9 /* TopAlbumsViewController.swift */,
+				A9388FDA2329109A003EF6F9 /* SettingsViewController.swift */,
 				A9CE38F023282CEA0050F061 /* JSON.swift */,
 				A9388FD42328410D003EF6F9 /* Extensions.swift */,
 				A9CE38C6232829D30050F061 /* Main.storyboard */,
@@ -270,6 +273,7 @@
 			files = (
 				A9388FD9232907F2003EF6F9 /* TopAlbumsViewController.swift in Sources */,
 				A9CE38F123282CEA0050F061 /* JSON.swift in Sources */,
+				A9388FDB2329109A003EF6F9 /* SettingsViewController.swift in Sources */,
 				A9CE38C5232829D30050F061 /* ViewController.swift in Sources */,
 				A9CE38C3232829D30050F061 /* AppDelegate.swift in Sources */,
 				A9388FD72328F469003EF6F9 /* detailViewController.swift in Sources */,
