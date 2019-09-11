@@ -32,25 +32,6 @@ class ViewController: UIViewController {
         view.backgroundColor = .black
         movieList.backgroundColor = .black
     }
-    //Requests JSON data from the network
-    func parse() -> Void {
-        guard let gitUrl = URL(string: JSONURL) else { return }
-        URLSession.shared.dataTask(with: gitUrl) { (data, response
-            , error) in
-            guard let data = data else { return }
-            do {
-                let decoder = JSONDecoder()
-                let content = try decoder.decode(Empty.self, from: data)
-                self.movies = content.feed.results
-                DispatchQueue.main.async {
-                    self.movieList.reloadData()
-                    
-                }
-            } catch let err {
-                print("Err", err)
-            }
-            }.resume()
-    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         parse()
@@ -77,8 +58,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = movies[indexPath.row]//gets the array element by table row
-        let vc = detailViewController()
-        vc.imageURL = row.artworkUrl100
+        let defaults = UserDefaults.standard
+        defaults.setValue(row.artworkUrl100, forKeyPath: "selectedImage")
+        defaults.set(row.name, forKey: "selectedName")
     }
 }
 //END ->TableView
