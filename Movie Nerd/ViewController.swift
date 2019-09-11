@@ -10,7 +10,7 @@ import UIKit
 
 class movieRow:UITableViewCell {
     @IBOutlet weak var moviePoster: UIImageView!
-    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var ArtistName: UILabel!
     @IBOutlet weak var MovieTitle: UILabel!
     
 }
@@ -66,24 +66,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = movieList.dequeueReusableCell(withIdentifier: "movieRow") as! movieRow
         //ell design
         cell.MovieTitle.textColor = .blue
-        cell.releaseDate.textColor = .green
+        cell.ArtistName.textColor = .green
         cell.backgroundColor = .black
         //END -> Cell design
         let row = movies[indexPath.row]//gets the array element by table row
         cell.MovieTitle.text = row.name
         cell.moviePoster.imageFromUrl(urlString: row.artworkUrl100)
-        cell.releaseDate.text = row.artistName
+        cell.ArtistName.text = row.artistName
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var toggle = false
         let row = movies[indexPath.row]//gets the array element by table row
-        let preview = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height/2))
-        preview.imageFromUrl(urlString: row.artworkUrl100)
-        view.addSubview(preview)
-        movieList.isHidden = true
+        let vc = detailViewController()
+        vc.imageURL = row.artworkUrl100
     }
-    
 }
 //END ->TableView
 
